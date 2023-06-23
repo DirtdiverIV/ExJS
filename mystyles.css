@@ -1,0 +1,38 @@
+.container {
+    width: 80%;
+    margin-top: 2em;
+    
+}
+
+body {
+    background-color: #000814;
+}
+
+.accordion-item {
+    background-color: #001D3D;
+    border-color: #FFC300;
+}
+
+.accordion-button {
+    background-color: #003566;
+    color: white;
+}
+
+.accordion-body {
+    color: white;
+}
+
+.accordion-header {
+    
+}
+
+pre {
+    background-color: #000814;
+    color: #FFD60A;
+}
+
+.navbar-custom {
+    background-color: #FFC300;
+    border: 2px solid #FFD60A;
+    border-color: #FFD60A;
+}

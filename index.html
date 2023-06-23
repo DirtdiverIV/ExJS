@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="img/jslogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            ExJS
+          </a>
+        </div>
+      </nav>
+      <div class="container">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              ¿Qué es un archivo JSON?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Cuando trabajamos con mucha cantidad de información, se puede volver necesario separar nuestro código de programación de los datos que aparecen en él. De esta forma, podemos guardar la información en un archivo independiente, separado del archivo donde tenemos el código de nuestro programa. Así, si necesitamos actualizar o modificar datos, no tenemos que tocar el código de nuestro programa.
+              JSON son las siglas de JavaScript Object Notation, y no es más que un formato ligero de datos, con una estructura (notación) específica, que es totalmente compatible de forma nativa con Javascript. Como su propio nombre indica, JSON se basa en la sintaxis que tiene Javascript para crear objetos.
+
+              Un archivo JSON mínimo suele tener la siguiente sintaxis:
+
+              <pre><code>{
+                "name": "Manz",
+                "life": 3,
+                "totalLife": 6
+                "power": 10,
+                "dead": false,
+                "props": ["invisibility", "coding", "happymood"],
+                "senses": {
+                  "vision": 50,
+                  "audition": 75,
+                  "taste": 40,
+                  "touch": 80
+                }
+              }
+                </code></pre>
+
+              
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              ¿Qué es la asincronía en Javascript?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              La asincronía es uno de los conceptos principales que rige el mundo de Javascript. Cuando comenzamos a programar, normalmente realizamos tareas de forma síncrona, llevando a cabo tareas secuenciales que se ejecutan una detrás de otra, de modo que el orden o flujo del programa es sencillo y fácil de observar en el código.
+              <img src="img/asinc.png" class="img-fluid" alt="Responsive image">
+              Sin embargo, en el mundo de la programación, tarde o temprano necesitaremos realizar operaciones asíncronas, especialmente en ciertos lenguajes como Javascript, donde tenemos que realizar tareas que tienen que esperar a que ocurra un determinado suceso que no depende de nosotros, y reaccionar realizando otra tarea sólo cuando dicho suceso ocurra.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              ¿Qué son las Promesas?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Como su propio nombre indica, una promesa es algo que, en principio pensamos que se cumplirá, pero en el futuro pueden ocurrir varias cosas:
+              <img src="img/prom.png" class="img-fluid" alt="Responsive image">
+              <ul class="list-group">
+                <list class="list-group-item">La promesa se cumple (promesa resuelta)</list>
+                <list class="list-group-item">La promesa no se cumple (promesa rechazada)</list>
+                <list class="list-group-item">La promesa se queda en un estado incierto indefinidamente (promesa pendiente)</list>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+              ¿Qué es y cómo se usa ‘Fetch’ en JS?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Fetch es el nombre de una nueva API para Javascript con la cuál podemos realizar peticiones HTTP asíncronas utilizando promesas y de forma que el código sea un poco más sencillo y menos verbose. La forma de realizar una petición es muy sencilla, básicamente se trata de llamar a fetch y pasarle por parámetro la URL de la petición a realizar:
+              <pre><code>
+                const promise = fetch("/robots.txt");
+
+                promise.then(function(response) {
+                  /* ... */
+                });
+                </code></pre>
+                El fetch() devolverá una  que será aceptada cuando reciba una respuesta y sólo será rechazada si hay un fallo de red o si por alguna razón no se pudo completar la petición.
+
+                El modo más habitual de manejar las promesas es utilizando .then(), aunque también se puede utilizar async/await. Esto se suele reescribir de la siguiente forma, que queda mucho más simple y evitamos constantes o variables temporales de un solo uso:
+                <pre><code>
+                  fetch("/robots.txt")
+                    .then(function(response) {
+                      /** Código que procesa la respuesta **/
+                    });
+                  </code></pre>
+                  Al método .then() se le pasa una función callback donde su parámetro response es el objeto de respuesta de la petición que hemos realizado. En su interior realizaremos la lógica que queramos hacer con la respuesta a nuestra petición.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+              ¿Cómo se usa Async/Await?
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              En  se introducen las palabras clave async/await, que no son más que una forma de azúcar sintáctico para gestionar las promesas de una forma más similar a lo que solemos estar acostumbrados. Recordemos un fragmento de código donde manejamos promesas mediante .then():
+              <pre><code>
+                  fetch("/robots.txt")
+                    .then(response => response.text())
+                    .then(data => console.log(data));
+
+                  console.log("Código síncrono.");
+                </code></pre>
+                Con async/await seguimos manejando promesas, sin embargo, hay ciertos cambios importantes:
+                <ul class="list-group">
+                  <list class="list-group-item">No encadenamos mediante .then(), sino que usamos un sistema más tradicional.</list>
+                  <list class="list-group-item">Abandonamos el modelo no bloqueante y pasamos a uno bloqueante.</list>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+              ¿Cuándo deberíamos usar código asíncrono?
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              En Javascript no todas las tareas son asíncronas, pero hay ciertas tareas que si lo son, y probablemente se entiendan mejor con ejemplos reales:
+              <ul class="list-group">
+                <list class="list-group-item">Un fetch() a una URL para obtener un archivo .json.</list>
+                <list class="list-group-item">Un play() de un .mp3 que creamos mediante un new Audio().</list>
+                <list class="list-group-item">Una tarea programada con setTimeout() que se ejecutará en el futuro.</list>
+                <list class="list-group-item">Una comunicación desde Javascript a la API del sintetizador de voz del navegador.</list>
+                <list class="list-group-item">Una comunicación desde Javascript a la API de un sensor del smartphone.</list>
+              </ul>
+              Todos estos ejemplos se realizan mediante tareas asíncronas, ya que realizan un procedimiento que podría bloquear la ejecución del resto del programa al tardar mucho: la descarga de un fichero grande desde un servidor lento, una conexión a internet muy lenta, un dispositivo saturado a la hora de comunicarse con el sensor del móvil, etc...
+            </div>
+          </div>
+        </div>
+      </div>
+    <h1>Hello, world!</h1>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
