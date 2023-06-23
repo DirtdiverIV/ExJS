@@ -36,3 +36,7 @@ pre {
     border: 2px solid #FFD60A;
     border-color: #FFD60A;
 }
+
+.nav-link {
+    color: #000814;
+}
