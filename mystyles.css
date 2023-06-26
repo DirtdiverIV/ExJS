@@ -40,3 +40,9 @@ pre {
 .nav-link {
     color: #000814;
 }
+
+.coming {
+    color: white;
+    font-size: 64px;
+    text-align: center;
+}
