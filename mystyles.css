@@ -46,3 +46,13 @@ pre {
     font-size: 64px;
     text-align: center;
 }
+
+th {
+    border: 2px solid black;
+}
+
+td {
+    border: 2px solid black;
+}
+
+
